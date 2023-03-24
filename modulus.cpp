@@ -38,5 +38,10 @@ int main()
 	d = (a % M * b % M) % M;
 	cout << c << " " << d << "\n";
 
+	//For division follow the next few files because it is not the conventional modulus, we have to find something known as the inverse of the number for which you need some prior knowledge which we would learn in the following files.
+
+	//Hope It may be Helpfull for You.
+
+	//Input - 37 , 21
 
 }
