@@ -12,30 +12,6 @@ int gcd(int a, int b) // recursively
 	return gcd(b, a % b);
 }
 
-int bin_exp(int a, int b)
-{
-	if (b == 0)
-	{
-		return 1;
-	}
-	if (b == 1)
-	{
-		return a;
-	}
-
-	int d;
-	if (b % 2 != 0)
-	{
-		d = bin_exp(a, (b - 1) / 2) * a;
-	}
-	else
-	{
-		d = bin_exp(a, b / 2);
-	}
-
-	return d * d;
-}
-
 int main()
 {
 #ifndef ONLINE_JUDGE
