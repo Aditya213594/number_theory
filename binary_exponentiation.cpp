@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int bin_exp(int a, int b)
+int bin_exp(int a, int b) // recursive
 {
 	if (b == 0)
 	{
@@ -25,6 +25,25 @@ int bin_exp(int a, int b)
 
 }
 
+//iterative
+
+int bin_exp_itr(int a, int b)
+{
+	int ans = 1;
+	while (b > 0)
+	{
+		if (b & 1)
+		{
+			ans = ans * a;
+		}
+
+		b = b >> 1;
+		a = a * a;
+	}
+
+	return ans;
+}
+
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -40,4 +59,7 @@ int main()
 
 	//binary exponentiation
 	cout << bin_exp(a, b) << "\n";
+
+	//binary exponentiation iterative
+	cout << bin_exp_itr(a, b) << "\n";
 }
