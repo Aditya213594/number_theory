@@ -1,17 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//eucledian algorithm
-int gcd(int a, int b) // recursively
-{
-	if (b == 0)
-	{
-		return a;
-	}
-
-	return gcd(b, a % b);
-}
-
 int bin_exp(int a, int b)
 {
 	if (b == 0)
@@ -23,17 +12,17 @@ int bin_exp(int a, int b)
 		return a;
 	}
 
-	int d;
+	int d = bin_exp(a, b / 2);
 	if (b % 2 != 0)
 	{
-		d = bin_exp(a, (b - 1) / 2) * a;
+		return d * d * a;
+
 	}
 	else
 	{
-		d = bin_exp(a, b / 2);
+		return d * d;
 	}
 
-	return d * d;
 }
 
 int main()
@@ -46,10 +35,9 @@ int main()
 	int a, b;
 	cin >> a >> b;
 
-	//conventional gcd method
-	cout << gcd(a, b) << "\n";
+	//c++ stl
+	cout << pow(a, b) << "\n";
 
-	int lcm = (a * b) / gcd(a, b);
-
-	cout << lcm;
+	//binary exponentiation
+	cout << bin_exp(a, b) << "\n";
 }
